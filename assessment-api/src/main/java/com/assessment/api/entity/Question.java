@@ -12,7 +12,7 @@ import lombok.Data;
 @Table(name = "questions")
 public class Question {
 
-	private UUID studentId;
+	private UUID questionId;
 	private String question;
-	
+
 }
