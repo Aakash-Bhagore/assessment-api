@@ -3,11 +3,17 @@
  */
 package com.assessment.api.entity;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -16,10 +22,14 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "assessments")
-public class Assessment {
+public class Assessment implements Serializable {
 
+	private static final Long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue
 	private UUID assessmentId;
 	private String assessmentName;
+	@OneToMany(targetEntity = Question.class,cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Question> questions;
 
 	public Assessment() {}

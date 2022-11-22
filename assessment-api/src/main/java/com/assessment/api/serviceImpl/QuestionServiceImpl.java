@@ -8,12 +8,13 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import org.aspectj.weaver.patterns.TypePatternQuestions.Question;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.assessment.api.dto.QuestionDTO;
+import com.assessment.api.entity.Question;
 import com.assessment.api.exception.QuestionNotFoundException;
 import com.assessment.api.repository.QuestionRepository;
 import com.assessment.api.service.QuestionService;
